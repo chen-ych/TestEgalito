@@ -1,0 +1,36 @@
+Languages
+---------
+
+c       C
+cpp     C++
+java    Java
+cfrule  codeform rules files
+
+Styles
+------
+
+1       Made-up style from earlier version of codeform
+devcpp  The highlighting style that Dev-C++ 4 uses
+kate*   KEdit/KWrite/Kate/KDevelop's highlighting style
+scite*  The highlighting style that SciTE 1.4.9 uses
+
+* Incomplete.
+
+Output formats
+--------------
+
+css    HTML 4.01 transitional with CSS
+       Note: When using _css, you need to add a stylesheet
+html   HTML 4.01 transitional
+ilcss  HTML 4.01 transitional with inline CSS
+phpbb  (PhpBB) BBCode (just like vbb but with [color=black] around everything)
+vbb    (vbulletin) BBCode
+
+Notes
+-----
+
+The cpp_1 rules file can be specified after a C rules file to make it C++; for
+example, this formats C++ into kate-style vBulletin BBCode:
+    codeform -f rules/c_1_vbb -f rules/cpp_1
+For Java, the C rules files (c_devcpp, for example) can be edited so that
+their last lines that source rules reflect Java, not C, rules files.

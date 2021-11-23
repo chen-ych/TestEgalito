@@ -1,0 +1,45 @@
+# _css by DWK
+# codeform rules for formatting into HTML 4.01 transitional with CSS
+#
+# codeform, a code formatter and colourer [intended] for C and C++
+# Copyright (C) 2007 DWK
+#
+# This is free software, and you are welcome to redistribute it
+# under certain conditions; see the file COPYING for details.
+
+# Note: you may need to add to this stylesheet
+
+# Empty stylesheet:
+#=start
+#<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">\n\
+#<html><head><title>codeform</title>\n\
+#<!-- Add stylesheet here or elsewhere -->\n\
+#</head><body><pre>\n
+
+=start
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">\n\
+<html><head><title>codeform</title>\n\
+<style type\="text/css">\n\
+.red { color\: red; }\n\
+.darkred { color\: darkred; }\n\
+.green { color\: green; }\n\
+.darkgreen { color\: darkgreen; }\n\
+.blue { color\: blue; }\n\
+.darkblue { color\: darkblue; }\n\
+\
+.bold { font-weight\: bold; }\n\
+.italic { font-decoration\: italic; }\n\
+</style></head><body><pre>\n
+
+=end
+</pre></body></html>\n
+
+formbb=<span class="
+formba=">
+forma=</span>
+
+boldb=<span class="bold">
+bolda=$(forma)
+
+italicb=<span class="italic">
+italica=$(forma)

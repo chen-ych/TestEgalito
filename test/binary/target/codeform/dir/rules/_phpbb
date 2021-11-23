@@ -1,0 +1,29 @@
+# _phpbb by DWK
+# codeform rules for formatting into (phpBB) BBCode
+#
+# codeform, a code formatter and colourer [intended] for C and C++
+# Copyright (C) 2007 DWK
+#
+# This is free software, and you are welcome to redistribute it
+# under certain conditions; see the file COPYING for details.
+
+# identical to _vbb except that this wraps black colour tags around the whole
+# text, because with phpBB the default colour often isn't black
+
+# assumes the phpBB mod that allows colour tags in code tags
+
+=start
+[code][color=black]
+
+=end
+[/color][/code]
+
+formbb=[color=
+formba=]
+forma=[/color]
+
+boldb=[b]
+bolda=[/b]
+
+italicb=[i]
+italica=[/i]

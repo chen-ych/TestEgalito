@@ -1,0 +1,42 @@
+# c_sciteext by DWK
+# codeform rules for formatting C, scite style-type extension
+#
+# codeform, a code formatter and colourer [intended] for C and C++
+# Copyright (C) 2007 DWK
+#
+# This is free software, and you are welcome to redistribute it
+# under certain conditions; see the file COPYING for details.
+
+formbb=
+formba=
+forma=
+
+boldb=
+bolda=
+
+keywordc=darkblue
+keywordb=$(boldb)
+keyworda=$(bolda)
+
+=midword
+
+midwordc=
+midwordb=$(boldb)
+midworda=$(bolda)
+
+\*:$(midwordb):$(midworda)
+&:*:*
+!:*:*
+|:*:*
+?:*:*
+{:*:*
+}:*:*
+(:*:*
+):*:*
+
+commentc=green
+commentdocc=\#3f6f3f
+stringc=purple
+nestcomc=olive
+numberc=teal
+fpnumberc=$(numberc)

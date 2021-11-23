@@ -1,0 +1,48 @@
+# c_ext1 by DWK
+# codeform rules for formatting C, style 1-type extension
+#
+# codeform, a code formatter and colourer [intended] for C and C++
+# Copyright (C) 2007 DWK
+#
+# This is free software, and you are welcome to redistribute it
+# under certain conditions; see the file COPYING for details.
+
+formbb=
+formba=
+forma=
+
+keywordc=
+keywordb=$(formbb)$(keywordc)$(formba)
+keyworda=$(forma)
+
+keyworddarkc=
+keyworddarkb=$(formbb)$(keyworddarkc)$(formba)
+keyworddarka=$(forma)
+
+midwordc=
+midwordb=$(formbb)$(midwordc)$(formba)
+midworda=$(forma)
+
+commentc=
+commentb=$(formbb)$(commentc)$(formba)
+commenta=$(forma)
+
+commentdocc=$(commentc)
+commentdocb=$(formbb)$(commentdocc)$(formba)
+commentdoca=$(forma)
+
+stringc=
+stringb=$(formbb)$(stringc)$(formba)
+stringa=$(forma)
+
+nestcomc=
+nestcomb=$(formbb)$(nestcomc)$(formba)
+nestcoma=$(forma)
+
+numberc=
+numberb=$(formbb)$(numberc)$(formba)
+numbera=$(forma)
+
+fpnumberc=
+fpnumberb=$(formbb)$(fpnumberc)$(formba)
+fpnumbera=$(forma)

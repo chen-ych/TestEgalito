@@ -1,0 +1,61 @@
+# c_kateext by DWK
+# codeform rules for formatting C, kate style-type extension
+#
+# codeform, a code formatter and colourer [intended] for C and C++
+# Copyright (C) 2007 DWK
+#
+# This is free software, and you are welcome to redistribute it
+# under certain conditions; see the file COPYING for details.
+
+formbb=
+formba=
+forma=
+
+boldb=
+bolda=
+
+italicb=
+italica=
+
+=keyword
+
+keywordvariablec=maroon
+keywordvariableb=$(formbb)$(keywordvariablec)$(formba)
+keywordvariablea=$(forma)
+
+auto:$(keywordvariableb):$(keywordvariablea)
+bool:*:*
+char:*:*
+const:*:*
+double:*:*
+float:*:*
+int:*:*
+long:*:*
+register:*:*
+short:*:*
+signed:*:*
+unsigned:*:*
+void:*:*
+volatile:*:*
+wchar_t:*:*
+
+keywordc=
+keywordb=$(boldb)
+keyworda=$(bolda)
+
+=midword
+
+midwordc=
+midwordb=$(boldb)
+midworda=$(bolda)
+
+commentc=gray
+commentb=$(formbb)$(commentc)$(formba)$(italicb)
+commenta=$(italica)$(forma)
+commentdocc=$(commentc)
+commentdocb=$(commentb)
+commentdoca=$(commenta)
+stringc=red
+nestcomc=darkgreen
+numberc=blue
+fpnumberc=purple

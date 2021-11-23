@@ -1,0 +1,39 @@
+# c_devcppext by DWK
+# codeform rules for formatting C, devcpp style-type extension
+#
+# codeform, a code formatter and colourer [intended] for C and C++
+# Copyright (C) 2007 DWK
+#
+# This is free software, and you are welcome to redistribute it
+# under certain conditions; see the file COPYING for details.
+
+formbb=
+formba=
+forma=
+
+boldb=
+bolda=
+
+italicb=
+italica=
+
+keywordc=
+keywordb=$(boldb)
+keyworda=$(bolda)
+
+=midword
+
+midwordc=
+midwordb=$(boldb)
+midworda=$(bolda)
+
+commentc=blue
+commentb=$(formbb)$(commentc)$(formba)$(italicb)
+commenta=$(italica)$(forma)
+commentdocc=$(commentc)
+commentdocb=$(commentb)
+commentdoca=$(commenta)
+stringc=red
+nestcomc=green
+numberc=darkblue
+fpnumberc=$(numberc)

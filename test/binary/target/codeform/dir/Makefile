@@ -1,0 +1,34 @@
+# Makefile for codeform 1.2.0, Linux version
+#
+# codeform, a code formatter and colourer [intended] for C and C++
+# Copyright (C) 2007 DWK
+#
+# This is free software, and you are welcome to redistribute it
+# under certain conditions; see the file COPYING for details.
+
+RM = rm
+CC = gcc
+GDB = gdb
+CFLAGS = -W -Wall -ansi -pedantic -O2 -g
+OBJ = codeform.o
+TARGET = codeform
+
+# Default target: all
+all: $(TARGET)
+
+# Executable files
+$(TARGET): $(OBJ)
+	$(CC) $(CFLAGS) $(OBJ) -o $(TARGET)
+
+# Source files
+codeform.o: codeform.c
+
+# Other targets
+run: $(TARGET)
+	./$(TARGET)
+runa: $(TARGET)
+	./$(TARGET) `line`
+debug: $(TARGET)
+	$(GDB) $(TARGET)
+clean:
+	$(RM) $(TARGET) $(OBJ)

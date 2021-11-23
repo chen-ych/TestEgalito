@@ -1,0 +1,44 @@
+# cfrule_1 by DWK
+# codeform rules for formatting codeform rules files, style 1
+#
+# codeform, a code formatter and colourer [intended] for C and C++
+# Copyright (C) 2007 DWK
+#
+# This is free software, and you are welcome to redistribute it
+# under certain conditions; see the file COPYING for details.
+
+keywordc=teal
+keywordb=$(formbb)$(keywordc)$(formba)
+keyworda=$(forma)
+
+=keyword
+
+keyworddarkc=darkblue
+keyworddarkb=$(formbb)$(keyworddarkc)$(formba)
+keyworddarka=$(forma)
+
+=midword
+
+midwordc=darkred
+midwordb=$(formbb)$(midwordc)$(formba)
+midworda=$(forma)
+
+midwordlightc=red
+midwordlightb=$(formbb)$(midwordlightc)$(formba)
+midwordlighta=$(forma)
+
+commentc=green
+commentvarc=darkblue
+commentvarb=$(formbb)$(commentvarc)$(formba)
+commentvara=$(forma)
+
+stringc=red
+
+nestcomc=green
+
+numberc=blue
+
+fpnumberc=darkblue
+
+.c_1ext
+.cfrule

@@ -1,0 +1,310 @@
+/*--------------------------*\
+ | HOW TO WRITE RULES FILES |
+\*--------------------------*/
+
+    codeform, a code formatter and colourer [intended] for C and C++
+    Copyright (C) 2007 DWK
+
+    This is free software, and you are welcome to redistribute it
+    under certain conditions; see the file COPYING for details.
+
+This how-to describes how to write rules files for codeform version 1.2.0.
+
+Rules files
+-----------
+
+Rules files are files containing rules telling codeform how to format code.
+codeform's rules files are very flexible and contain many features not present
+in the rules files of previous versions of codeform, including file sourcing,
+variables, comments, and repeated sections.
+
+Headers and rules
+-----------------
+
+Rules files are divided into sections by headers, which start with = (like
+POD). For example, to start a keyword section, use the following (with no
+indentation, ie no spaces before the '=', like the rest of the examples):
+    =keyword
+(See the section "List of rules" for the valid headers.)
+
+Under the header there can be zero or more rules. A rule is a single line (1)
+divided into sections; sections are separated with colons (2). Different
+headers expect different numbers of sections. Often the same header can accept
+a range of sections. Keywords, for example, have 3-4 sections. The first
+section is the text to search for; the second is what to put before the
+keyword; the (optional) third is what to replace the keyword with; and the
+last is what to put after the keyword. Sections may be empty.
+
+So for a rules file like the following (remember, no leading spaces; the '='
+and 'M's must be the first characters on the line):
+    =keyword
+    Mister:<b>:</b>
+    Mr:<b>:Mister:</b>
+"Mister" will be replaced with "<b>Mister</b>", and likewise for "Mr".
+
+Repeated sections
+-----------------
+
+To indicate that a rule's section is the same as the previous rule's same
+section, use "*":
+    =keyword
+    int:<b>:</b>
+    char:*:*
+    float:*:*
+
+Changing one rule earlier on does not effect the following rules. Even if int
+(the first rule) is changed previously, the following rules will have the same
+sections as the int rule given here, unless all of the keywords are changed.
+
+To make a section contain the literal "*", backslash it like so: "\*".
+
+Inline headers
+--------------
+
+Headers can be on the same line as a rule. The header is followed by a ':' and
+the rule is the same. To replace "<" with "&lt;" you could use this:
+    =midword:&::&lt;:
+One-liner headers are very useful for inline rules specified on the command
+line. All succeeding rules (until the next header) are effected, just like a
+normal header.
+
+Comments
+--------
+
+Comments start with # and go until the end of the line. They can start
+anywhere, although if there's a space before them, that is be considered part
+of the line. So this doesn't do what you think it does:
+    int:<b>:</b> # comment
+Once the comment is removed, the space is still part of the third section.
+(It ends with "</b> ".) If you must put a comment after a rule/header, put no
+leading spaces in:
+    int:<b>:</b># comment
+Usually comments are on a line to themselves.
+
+Repeated headers
+----------------
+
+There can be as many headers you like of the same type. For example, you could
+have a =keyword section, switch to a =midword section, and then back again:
+    =keyword
+    # . . . some keyword rules . . .
+    =midword
+    # . . . some midword rules . . .
+    =keyword
+    # . . . some more keyword rules . . .
+
+Variables
+---------
+
+You can also have variables in a rules file. A variable is one or more alpha-
+numeric characters (a-z, A-Z, 0-9, and _ -- case sensitive) followed by an '='
+followed by the text to replace the variable with. A variable is used by
+prefixing the name with a '$' sign and surrounding the name in parenthesis,
+"()".
+
+Here's a sample rules file:
+    # Sample rules file
+    # Replaces "lg", "l", and "l." with "large".
+    
+    with=large
+    =keyword
+    lg::$(with):
+    l::$(with):
+    l.::$(with):
+
+If a variable isn't defined, it is treated as an empty variable.
+
+Variables in variables
+----------------------
+
+Variables can consist of other variables ad infinitum. The following is
+perfectly valid:
+    color=red
+    before=<font color\="
+    full=$(before)$(color)">
+Note that you cannot have recursive variables. Rules don't exist until the
+line after they are defined, which prevents indirect recursion; and if a rule
+references itself it doesn't exist. So
+    a=[$(a)]
+will cause the variable a to be set to "[]".
+
+Rule/variable overriding
+------------------------
+
+Rules and variables are first-come, first-served; whichever appears first
+takes precedence if, for example, there are two "int" keywords. Since inline
+rules take precedence over rules files, you can easily change variables and
+rules on the command line.
+    =keyword
+    color=blue
+    color=red# disregarded
+    int:<font color="$(color)">:</font>
+    int:::# disregarded
+is the same as
+    =keyword:int:<font color="red">:</font>
+
+List of rules
+-------------
+
+Here is a list of the current rules, their number of sections, syntax, and an
+explanation:
+    =keyword    3-4    search-for:precede-with[:replace-with]:postfix-with
+        Finds search-for and prints precede-with before it and postfix-with
+        after. If replace-with is present, it is printed instead of
+        search-for. The characters before and after search-for must be
+        non-word (a-z, A-Z, _), so a search-for of "int" won't match "printf".
+        If the previous keyword/midword/number/fpnumber started with the same
+        precede-with, its postfix-with and this one's precede-with aren't
+        printed. (Same with the midword, number, and fpnumber.)
+
+    =midword    3-4    search-for:precede-with:[replace-with:]postfix-with
+        Same as =keyword, except the last sentence is excluded -- the
+        characters before and after search-for can be anything, like a typical
+        search-and-replace. So a midword of "(" will match "main(void)".
+
+    =comment    3-4    comment-start[:comment-end]:precede-with:postfix-with
+        Ignores other keywords between comment-start and comment-end
+        (actually, the search-and-replace still happens, but precede-with and
+        postfix-with don't get printed); also prints precede-with before the
+        comment and postfix-with after. If comment-end is absent (not empty,
+        absent), uses a default of "\n" (end of line). (Actually, it acts like
+        the character before the EOL, so absent and "\n" are different.)
+
+    =string     3-4    comment-start[:comment-end]:precede-with:postfix-with
+        Same as =comment, except that comment-end will be skipped over if it
+        is escaped (preceded by an odd number of backslashes).
+
+    =neststr    3-4    comment-start[:comment-end]:precede-with:postfix-with
+        Same as =comment, except that other comments and string are allowed to
+        start inside neststr comments. If a string is inside one, the precede-
+        wide and postfix-with won't be printed (they will be for =comment). If
+        another neststr starts inside this one, that neststr can also have
+        other strings and comments inside it. (For supporting preprocessor
+        directives in C/C++, #define etc.)
+
+    =number     2-2    number-before:number-after
+        Numbers (a non-word char followed by one or more digits followed by
+        zero or more word chars; no periods!) will be preceded with
+        number-before and postfixed with number-after.
+
+    =fpnumber   2-2    number-before:number-after
+        Same as =number, except that it matches floating point numbers. A
+        floating-point number is one or more optional digits plus a period
+        plus one or more optional digits. (At least one digit must be
+        present.)
+
+    =start      1-1    start
+        At the beginning of the file (even a blank file), start will be
+        printed.
+
+    =end        1-1    end
+        Same as =start, except that end is printed at the end of the file.
+        (* Note that on a DOS console, it is sometimes not possible to print
+        something after a CTRL-Z has been entered at the keyboard. So if you
+        are using stdout and stdin, end might not be printed.)
+
+Inline rules
+------------
+
+Inline rules specified on the command line (3) are slightly different from
+regular rules; they do not support line continuation.
+
+Sourcing rules files
+--------------------
+
+You can "source" rules files from within each other; the contents of one rules
+file is inserted into another as if you'd typed it directly, like C and C++'s
+#include. (Be careful -- you don't want to create an infinite loop! (4)) You
+can source a file like this:
+    .other_rules_file
+This is useful when several files have similar content or a similar "style".
+
+Note that the -f option for codeform could be used like this instead:
+    -e .rules_file
+
+Escape sequences
+----------------
+
+The following escape sequences are recognized:
+    \n: A newline
+    \t: A tab
+    \* (\ anything else): The * character, whatever it is (\, h, etc)
+For example, if you want to look for the literal "\n" and not a newline, use:
+    \\n
+
+Naming conventions
+------------------
+
+The rules files included with codeform are all in the directory rules/, and
+follow a naming convention. Each rules file name follows one of these formats:
+    language
+    language_styleext
+    language_style
+    _outputformat
+    language_style_outputformat
+For example, _html + c_1 converts C style 1 into HTML (all keywords blue etc).
+_css + c_devcpp converts C Dev-C++ style into CSS. (The output format must be
+specified first.) The last kind, c_1_html, is a shortcut for _html + c_1. The
+base c highlights the nessesary colours etc in a format-independent way;
+c_1ext is a style 1-type extension, which can be used for styles similar to
+style 1.
+
+The variables in the rules files start with a name followed by a character.
+The character usually follows this convention:
+    a After    b Before    c Colour/third section    d-z A-Z Anything else
+There are several variable types. First there are the ones that the rules use,
+starting with the header name, then an optional descriptor, then the letter:
+    keywordb=<b>
+    keyworda=</b>
+    keyworditalicb=<i>
+    keyworditalica=</i>
+    =keyword
+    int:$(keywordb):$(keyworda)
+    void:*:*
+    if:$(keyworditalicb):$(keyworditalica)
+Another variable type is the general one, usually set to "" at the top of the
+language rules files and then set to something in the _outputformat rules
+files. The "header[descriptor]letter" variables are usually set to them.
+For example:
+    boldb=<b>
+    bolda=</b>
+    keywordb=$(boldb)
+    keyworda=$(bolda)
+    #...
+If you're interested in these naming conventions check out the rules files
+that come with codeform. It's more complicated than I have indicated here.
+
+Footnotes
+---------
+
+1. Lines can be continued with the \ character if they become very long:
+    <html><head><title>codeform\
+    </title></head><body>
+
+2. To put a literal ':' or '=' (or any other character) into a string, escape
+it with a backslash:
+    colon::\::
+See the "Escape sequences" section.
+
+3. Inline rules are not to be confused with inline headers. An inline rule is
+a rule that has been specified as a command line parameter; an inline header
+is a rule that has a header before it:
+    =keyword:int:[b]:[/b]
+Inline rules often make use of inline headers, otherwise you have to specify
+two inline rules for one rule.
+
+4. codeform prevents you from sourcing the file you're inside, but it doesn't
+prevent you from sourcing B from A and A from B, resulting in an infinite
+loop. (After a while, though, codeform might open FOPEN_MAX files.)
+
+Historical note
+---------------
+
+The current version of codeform, version 1.2.0, was a complete re-write.
+
+Versions 1.04 - 1.10 used [header] for headers, '=' instead of ':' for
+separating sections, and the rules files themselves were called "dat files".
+Variables didn't exist.
+
+Versions 1.00 - 1.03 didn't even have DAT files; all the information was
+hard-coded into the program.

@@ -1,0 +1,423 @@
+# Data from http://www.cplusplus.com/reference
+
+=keyword
+
+# Works for HTML only
+clinkfuncc=blue
+clinkfuncbb=<a href="
+clinkfuncba=">
+clinkfunca=</a>
+clinkfuncurl=http://www.opengroup.org/pubs/online/7908799/xsh/
+
+####
+# assert.h
+####
+
+assert:$(clinkfuncbb)$(clinkfuncurl)assert$(clinkfuncba):$(clinkfunca)
+
+####
+# ctype.h
+####
+
+# Classifying functions:
+
+isalnum:$(clinkfuncbb)$(clinkfuncurl)isalnum$(clinkfuncba):$(clinkfunca)
+isalpha:$(clinkfuncbb)$(clinkfuncurl)isalpha$(clinkfuncba):$(clinkfunca)
+iscntrl:$(clinkfuncbb)$(clinkfuncurl)iscntrl$(clinkfuncba):$(clinkfunca)
+isdigit:$(clinkfuncbb)$(clinkfuncurl)isdigit$(clinkfuncba):$(clinkfunca)
+isgraph:$(clinkfuncbb)$(clinkfuncurl)isgraph$(clinkfuncba):$(clinkfunca)
+islower:$(clinkfuncbb)$(clinkfuncurl)islower$(clinkfuncba):$(clinkfunca)
+isprint:$(clinkfuncbb)$(clinkfuncurl)isprint$(clinkfuncba):$(clinkfunca)
+ispunct:$(clinkfuncbb)$(clinkfuncurl)ispunct$(clinkfuncba):$(clinkfunca)
+isspace:$(clinkfuncbb)$(clinkfuncurl)isspace$(clinkfuncba):$(clinkfunca)
+isupper:$(clinkfuncbb)$(clinkfuncurl)isupper$(clinkfuncba):$(clinkfunca)
+isxdigit:$(clinkfuncbb)$(clinkfuncurl)isxdigit$(clinkfuncba):$(clinkfunca)
+
+# Functions to convert between letter cases:
+
+tolower:$(clinkfuncbb)$(clinkfuncurl)tolower$(clinkfuncba):$(clinkfunca)
+toupper:$(clinkfuncbb)$(clinkfuncurl)toupper$(clinkfuncba):$(clinkfunca)
+
+####
+# errno.h
+####
+
+errno:$(clinkfuncbb)$(clinkfuncurl)errno$(clinkfuncba):$(clinkfunca)
+# plus two additional macro constants: EDOM and ERANGE (explained together with errno).
+
+####
+# float.h
+####
+
+# !!!
+#<tr><td><tt>FLT_RADIX</tt></td><td><tt>2</tt></td><td>RADIX</td><td>Base for all floating-point types (<tt>float</tt>, <tt>double</tt> and <tt>long double</tt>).</td></tr>
+#<tr><td><tt>FLT_MANT_DIG</tt> <br><tt>DBL_MANT_DIG</tt> <br><tt>LDBL_MANT_DIG</tt></td><td> </td><td>MANTissa DIGits</td><td>Precission of <i>significand</i>, i.e. the number of digits that conform the <i>significand</i>.</td></tr>
+#<tr><td><tt>FLT_DIG</tt> <br><tt>DBL_DIG</tt> <br><tt>LDBL_DIG</tt></td><td>6<br>10<br>10</td><td>DIGits</td><td>Number of <u>decimal digits</u> that can be rounded into a floating-point and back without change in the number of decimal digits.</td></tr>
+#<tr><td><tt>FLT_MIN_EXP</tt> <br><tt>DBL_MIN_EXP</tt> <br><tt>LDBL_MIN_EXP</tt></td><td> </td><td>MINimum EXPonent</td><td>Minimum negative integer value for the <i>exponent</i> that generates a normalized floating-point number.</td></tr>
+#<tr><td><tt>FLT_MIN_10_EXP</tt> <br><tt>DBL_MIN_10_EXP</tt> <br><tt>LDBL_MIN_10_EXP</tt></td><td><tt>-37</tt> <br><tt>-37</tt> <br><tt>-37</tt></td><td>MINimum base-10 EXPonent</td><td>Minimum negative integer value for the <i>exponent</i> of a base-10 expression that whould generate a normalized floating-point number.</td></tr>
+#<tr><td><tt>FLT_MAX_EXP</tt> <br><tt>DBL_MAX_EXP</tt> <br><tt>LDBL_MAX_EXP</tt></td><td> </td><td>MAXimum EXPonent</td><td>Maximum integer value for the <i>exponent</i> that generates a normalized floating-point number.</td></tr>
+#<tr><td><tt>FLT_MAX_10_EXP</tt> <br><tt>DBL_MAX_10_EXP</tt> <br><tt>LDBL_MAX_10_EXP</tt></td><td><tt>37</tt> <br><tt>37</tt> <br><tt>37</tt></td><td>MAXimum base-10 EXPonent</td><td>Maximum integer value for the <i>exponent</i> of a base-10 expression that whould generate a normalized floating-point number.</td></tr>
+#<tr><td><tt>FLT_MAX</tt> <br><tt>DBL_MAX</tt> <br><tt>LDBL_MAX</tt></td><td><tt>1E+37</tt> <br><tt>1E+37</tt> <br><tt>1E+37</tt></td><td>MAXimum</td><td>Maximum finite representable floating-point number.</td></tr>
+#<tr><td><tt>FLT_EPSILON</tt> <br><tt>DBL_EPSILON</tt> <br><tt>LDBL_EPSILON</tt></td><td><tt>1E-5</tt> <br><tt>1E-9</tt> <br><tt>1E-9</tt></td><td>EPSILON</td><td>Difference between 1 and the least value greater than 1 that is representable.</td></tr>
+#<tr><td><tt>FLT_MIN</tt> <br><tt>DBL_MIN</tt> <br><tt>LDBL_MIN</tt></td><td><tt>1E-37</tt> <br><tt>1E-37</tt> <br><tt>1E-37</tt></td><td>MINimum</td><td>Minimum representable floating-point number.</td></tr>
+
+####
+# limits.h
+####
+
+CHAR_BIT:$(clinkfuncbb)$(clinkfuncurl)CHAR_BIT$(clinkfuncba):$(clinkfunca)
+SCHAR_MIN:$(clinkfuncbb)$(clinkfuncurl)SCHAR_MIN$(clinkfuncba):$(clinkfunca)
+SCHAR_MAX:$(clinkfuncbb)$(clinkfuncurl)SCHAR_MAX$(clinkfuncba):$(clinkfunca)
+UCHAR_MAX:$(clinkfuncbb)$(clinkfuncurl)UCHAR_MAX$(clinkfuncba):$(clinkfunca)
+CHAR_MIN:$(clinkfuncbb)$(clinkfuncurl)CHAR_MIN$(clinkfuncba):$(clinkfunca)
+CHAR_MAX:$(clinkfuncbb)$(clinkfuncurl)CHAR_MAX$(clinkfuncba):$(clinkfunca)
+MB_LEN_MAX:$(clinkfuncbb)$(clinkfuncurl)MB_LEN_MAX$(clinkfuncba):$(clinkfunca)
+SHRT_MIN:$(clinkfuncbb)$(clinkfuncurl)SHRT_MIN$(clinkfuncba):$(clinkfunca)
+SHRT_MAX:$(clinkfuncbb)$(clinkfuncurl)SHRT_MAX$(clinkfuncba):$(clinkfunca)
+USHRT_MAX:$(clinkfuncbb)$(clinkfuncurl)USHRT_MAX$(clinkfuncba):$(clinkfunca)
+INT_MIN:$(clinkfuncbb)$(clinkfuncurl)INT_MIN$(clinkfuncba):$(clinkfunca)
+INT_MAX:$(clinkfuncbb)$(clinkfuncurl)INT_MAX$(clinkfuncba):$(clinkfunca)
+UINT_MAX:$(clinkfuncbb)$(clinkfuncurl)UINT_MAX$(clinkfuncba):$(clinkfunca)
+LONG_MIN:$(clinkfuncbb)$(clinkfuncurl)LONG_MIN$(clinkfuncba):$(clinkfunca)
+LONG_MAX:$(clinkfuncbb)$(clinkfuncurl)LONG_MAX$(clinkfuncba):$(clinkfunca)
+ULONG_MAX:$(clinkfuncbb)$(clinkfuncurl)ULONG_MAX$(clinkfuncba):$(clinkfunca)
+
+####
+# locale.h
+####
+
+# Functions:
+
+setlocale:$(clinkfuncbb)$(clinkfuncurl)setlocale$(clinkfuncba):$(clinkfunca)
+localeconv:$(clinkfuncbb)$(clinkfuncurl)localeconv$(clinkfuncba):$(clinkfunca)
+
+# Types:
+
+lconv:$(clinkfuncbb)$(clinkfuncurl)lconv$(clinkfuncba):$(clinkfunca)
+
+####
+# math.h
+####
+
+# Trigonometric functions:
+
+cos:$(clinkfuncbb)$(clinkfuncurl)cos$(clinkfuncba):$(clinkfunca)
+sin:$(clinkfuncbb)$(clinkfuncurl)sin$(clinkfuncba):$(clinkfunca)
+tan:$(clinkfuncbb)$(clinkfuncurl)tan$(clinkfuncba):$(clinkfunca)
+acos:$(clinkfuncbb)$(clinkfuncurl)acos$(clinkfuncba):$(clinkfunca)
+asin:$(clinkfuncbb)$(clinkfuncurl)asin$(clinkfuncba):$(clinkfunca)
+atan:$(clinkfuncbb)$(clinkfuncurl)atan$(clinkfuncba):$(clinkfunca)
+atan2:$(clinkfuncbb)$(clinkfuncurl)atan2$(clinkfuncba):$(clinkfunca)
+
+# Hyperbolic functions:
+
+cosh:$(clinkfuncbb)$(clinkfuncurl)cosh$(clinkfuncba):$(clinkfunca)
+sinh:$(clinkfuncbb)$(clinkfuncurl)sinh$(clinkfuncba):$(clinkfunca)
+tanh:$(clinkfuncbb)$(clinkfuncurl)tanh$(clinkfuncba):$(clinkfunca)
+
+# Exponential and logarithmic functions:
+
+exp:$(clinkfuncbb)$(clinkfuncurl)exp$(clinkfuncba):$(clinkfunca)
+frexp:$(clinkfuncbb)$(clinkfuncurl)frexp$(clinkfuncba):$(clinkfunca)
+ldexp:$(clinkfuncbb)$(clinkfuncurl)ldexp$(clinkfuncba):$(clinkfunca)
+log:$(clinkfuncbb)$(clinkfuncurl)log$(clinkfuncba):$(clinkfunca)
+log10:$(clinkfuncbb)$(clinkfuncurl)log10$(clinkfuncba):$(clinkfunca)
+modf:$(clinkfuncbb)$(clinkfuncurl)modf$(clinkfuncba):$(clinkfunca)
+
+# Power functions:
+
+pow:$(clinkfuncbb)$(clinkfuncurl)pow$(clinkfuncba):$(clinkfunca)
+sqrt:$(clinkfuncbb)$(clinkfuncurl)sqrt$(clinkfuncba):$(clinkfunca)
+
+# Rounding, absolute value and remainder functions:
+
+ceil:$(clinkfuncbb)$(clinkfuncurl)ceil$(clinkfuncba):$(clinkfunca)
+fabs:$(clinkfuncbb)$(clinkfuncurl)fabs$(clinkfuncba):$(clinkfunca)
+floor:$(clinkfuncbb)$(clinkfuncurl)floor$(clinkfuncba):$(clinkfunca)
+fmod:$(clinkfuncbb)$(clinkfuncurl)fmod$(clinkfuncba):$(clinkfunca)
+
+####
+# setjmp.h
+####
+
+longjmp:$(clinkfuncbb)$(clinkfuncurl)longjmp$(clinkfuncba):$(clinkfunca)
+setjmp:$(clinkfuncbb)$(clinkfuncurl)setjmp$(clinkfuncba):$(clinkfunca)
+jmp_buf:$(clinkfuncbb)$(clinkfuncurl)jmp_buf$(clinkfuncba):$(clinkfunca)
+
+####
+# signal.h
+####
+
+# Functions:
+
+signal:$(clinkfuncbb)$(clinkfuncurl)signal$(clinkfuncba):$(clinkfunca)
+raise:$(clinkfuncbb)$(clinkfuncurl)raise$(clinkfuncba):$(clinkfunca)
+
+# Types:
+
+sig_atomic_t:$(clinkfuncbb)$(clinkfuncurl)sig_atomic_t$(clinkfuncba):$(clinkfunca)
+# And several macro contant values: SIGABRT, SIGILL, SIGSEGV, SIG_DFL, SIG_IGN, SIGFPE, SIGINT, SIGTERM and SIG_ERROR (explained in signal).
+
+####
+# stdarg.h
+####
+
+# Functions:
+
+va_start:$(clinkfuncbb)$(clinkfuncurl)va_start$(clinkfuncba):$(clinkfunca)
+va_arg:$(clinkfuncbb)$(clinkfuncurl)va_arg$(clinkfuncba):$(clinkfunca)
+va_end:$(clinkfuncbb)$(clinkfuncurl)va_end$(clinkfuncba):$(clinkfunca)
+
+# Types:
+
+va_list:$(clinkfuncbb)$(clinkfuncurl)va_list$(clinkfuncba):$(clinkfunca)
+
+####
+# stddef.h
+####
+
+# Types:
+
+ptrdiff_t:$(clinkfuncbb)$(clinkfuncurl)ptrdiff_t$(clinkfuncba):$(clinkfunca)
+size_t:$(clinkfuncbb)$(clinkfuncurl)size_t$(clinkfuncba):$(clinkfunca)
+
+# Macros:
+
+offsetof:$(clinkfuncbb)$(clinkfuncurl)offsetof$(clinkfuncba):$(clinkfunca)
+
+# Constants:
+
+NULL:$(clinkfuncbb)$(clinkfuncurl)NULL$(clinkfuncba):$(clinkfunca)
+
+# In the C language, this header also includes the declaration of the wchar_t type (wide character type), which in C++ is a fundamental type and therefore does not require the inclusion of any header.
+
+####
+# stdlib.h
+####
+
+# String conversion:
+
+atof:$(clinkfuncbb)$(clinkfuncurl)atof$(clinkfuncba):$(clinkfunca)
+atoi:$(clinkfuncbb)$(clinkfuncurl)atoi$(clinkfuncba):$(clinkfunca)
+atol:$(clinkfuncbb)$(clinkfuncurl)atol$(clinkfuncba):$(clinkfunca)
+strtod:$(clinkfuncbb)$(clinkfuncurl)strtod$(clinkfuncba):$(clinkfunca)
+strtol:$(clinkfuncbb)$(clinkfuncurl)strtol$(clinkfuncba):$(clinkfunca)
+strtoul:$(clinkfuncbb)$(clinkfuncurl)strtoul$(clinkfuncba):$(clinkfunca)
+
+# Pseudo-random sequence generation:
+
+rand:$(clinkfuncbb)$(clinkfuncurl)rand$(clinkfuncba):$(clinkfunca)
+srand:$(clinkfuncbb)$(clinkfuncurl)srand$(clinkfuncba):$(clinkfunca)
+
+# Dynamic memory management:
+
+calloc:$(clinkfuncbb)$(clinkfuncurl)calloc$(clinkfuncba):$(clinkfunca)
+free:$(clinkfuncbb)$(clinkfuncurl)free$(clinkfuncba):$(clinkfunca)
+malloc:$(clinkfuncbb)$(clinkfuncurl)malloc$(clinkfuncba):$(clinkfunca)
+realloc:$(clinkfuncbb)$(clinkfuncurl)realloc$(clinkfuncba):$(clinkfunca)
+
+# Environment:
+
+abort:$(clinkfuncbb)$(clinkfuncurl)abort$(clinkfuncba):$(clinkfunca)
+atexit:$(clinkfuncbb)$(clinkfuncurl)atexit$(clinkfuncba):$(clinkfunca)
+exit:$(clinkfuncbb)$(clinkfuncurl)exit$(clinkfuncba):$(clinkfunca)
+getenv:$(clinkfuncbb)$(clinkfuncurl)getenv$(clinkfuncba):$(clinkfunca)
+system:$(clinkfuncbb)$(clinkfuncurl)system$(clinkfuncba):$(clinkfunca)
+
+# Searching and sorting:
+
+bsearch:$(clinkfuncbb)$(clinkfuncurl)bsearch$(clinkfuncba):$(clinkfunca)
+qsort:$(clinkfuncbb)$(clinkfuncurl)qsort$(clinkfuncba):$(clinkfunca)
+
+# Integer arithmethics:
+
+abs:$(clinkfuncbb)$(clinkfuncurl)abs$(clinkfuncba):$(clinkfunca)
+div:$(clinkfuncbb)$(clinkfuncurl)div$(clinkfuncba):$(clinkfunca)
+labs:$(clinkfuncbb)$(clinkfuncurl)labs$(clinkfuncba):$(clinkfunca)
+ldiv:$(clinkfuncbb)$(clinkfuncurl)ldiv$(clinkfuncba):$(clinkfunca)
+
+# Multibyte characters:
+
+mblen:$(clinkfuncbb)$(clinkfuncurl)mblen$(clinkfuncba):$(clinkfunca)
+mbtowc:$(clinkfuncbb)$(clinkfuncurl)mbtowc$(clinkfuncba):$(clinkfunca)
+wctomb:$(clinkfuncbb)$(clinkfuncurl)wctomb$(clinkfuncba):$(clinkfunca)
+
+# Multibyte strings:
+
+mbstowcs:$(clinkfuncbb)$(clinkfuncurl)mbstowcs$(clinkfuncba):$(clinkfunca)
+wcstombs:$(clinkfuncbb)$(clinkfuncurl)wcstombs$(clinkfuncba):$(clinkfunca)
+
+# Macros:
+
+EXIT_FAILURE:$(clinkfuncbb)$(clinkfuncurl)EXIT_FAILURE$(clinkfuncba):$(clinkfunca)
+EXIT_SUCCESS:$(clinkfuncbb)$(clinkfuncurl)EXIT_SUCCESS$(clinkfuncba):$(clinkfunca)
+MB_CUR_MAX:$(clinkfuncbb)$(clinkfuncurl)MB_CUR_MAX$(clinkfuncba):$(clinkfunca)
+NULL:$(clinkfuncbb)$(clinkfuncurl)NULL$(clinkfuncba):$(clinkfunca)
+RAND_MAX:$(clinkfuncbb)$(clinkfuncurl)RAND_MAX$(clinkfuncba):$(clinkfunca)
+
+
+# Types:
+
+div_t:$(clinkfuncbb)$(clinkfuncurl)div_t$(clinkfuncba):$(clinkfunca)
+ldiv_t:$(clinkfuncbb)$(clinkfuncurl)ldiv_t$(clinkfuncba):$(clinkfunca)
+size_t:$(clinkfuncbb)$(clinkfuncurl)size_t$(clinkfuncba):$(clinkfunca)
+
+####
+# stdio.h
+####
+
+# Operations on files:
+
+remove:$(clinkfuncbb)$(clinkfuncurl)remove$(clinkfuncba):$(clinkfunca)
+rename:$(clinkfuncbb)$(clinkfuncurl)rename$(clinkfuncba):$(clinkfunca)
+tmpfile:$(clinkfuncbb)$(clinkfuncurl)tmpfile$(clinkfuncba):$(clinkfunca)
+tmpnam:$(clinkfuncbb)$(clinkfuncurl)tmpnam$(clinkfuncba):$(clinkfunca)
+
+# File access:
+
+fclose:$(clinkfuncbb)$(clinkfuncurl)fclose$(clinkfuncba):$(clinkfunca)
+fflush:$(clinkfuncbb)$(clinkfuncurl)fflush$(clinkfuncba):$(clinkfunca)
+fopen:$(clinkfuncbb)$(clinkfuncurl)fopen$(clinkfuncba):$(clinkfunca)
+freopen:$(clinkfuncbb)$(clinkfuncurl)freopen$(clinkfuncba):$(clinkfunca)
+setbuf:$(clinkfuncbb)$(clinkfuncurl)setbuf$(clinkfuncba):$(clinkfunca)
+setvbuf:$(clinkfuncbb)$(clinkfuncurl)setvbuf$(clinkfuncba):$(clinkfunca)
+
+# Formatted input/output:
+
+fprintf:$(clinkfuncbb)$(clinkfuncurl)fprintf$(clinkfuncba):$(clinkfunca)
+fscanf:$(clinkfuncbb)$(clinkfuncurl)fscanf$(clinkfuncba):$(clinkfunca)
+printf:$(clinkfuncbb)$(clinkfuncurl)printf$(clinkfuncba):$(clinkfunca)
+scanf:$(clinkfuncbb)$(clinkfuncurl)scanf$(clinkfuncba):$(clinkfunca)
+sprintf:$(clinkfuncbb)$(clinkfuncurl)sprintf$(clinkfuncba):$(clinkfunca)
+sscanf:$(clinkfuncbb)$(clinkfuncurl)sscanf$(clinkfuncba):$(clinkfunca)
+vfprintf:$(clinkfuncbb)$(clinkfuncurl)vfprintf$(clinkfuncba):$(clinkfunca)
+vprintf:$(clinkfuncbb)$(clinkfuncurl)vprintf$(clinkfuncba):$(clinkfunca)
+vsprintf:$(clinkfuncbb)$(clinkfuncurl)vsprintf$(clinkfuncba):$(clinkfunca)
+
+# Character input/output:
+
+fgetc:$(clinkfuncbb)$(clinkfuncurl)fgetc$(clinkfuncba):$(clinkfunca)
+fgets:$(clinkfuncbb)$(clinkfuncurl)fgets$(clinkfuncba):$(clinkfunca)
+fputc:$(clinkfuncbb)$(clinkfuncurl)fputc$(clinkfuncba):$(clinkfunca)
+fputs:$(clinkfuncbb)$(clinkfuncurl)fputs$(clinkfuncba):$(clinkfunca)
+getc:$(clinkfuncbb)$(clinkfuncurl)getc$(clinkfuncba):$(clinkfunca)
+getchar:$(clinkfuncbb)$(clinkfuncurl)getchar$(clinkfuncba):$(clinkfunca)
+gets:$(clinkfuncbb)$(clinkfuncurl)gets$(clinkfuncba):$(clinkfunca)
+putc:$(clinkfuncbb)$(clinkfuncurl)putc$(clinkfuncba):$(clinkfunca)
+putchar:$(clinkfuncbb)$(clinkfuncurl)putchar$(clinkfuncba):$(clinkfunca)
+puts:$(clinkfuncbb)$(clinkfuncurl)puts$(clinkfuncba):$(clinkfunca)
+ungetc:$(clinkfuncbb)$(clinkfuncurl)ungetc$(clinkfuncba):$(clinkfunca)
+
+# Direct input/output:
+
+fread:$(clinkfuncbb)$(clinkfuncurl)fread$(clinkfuncba):$(clinkfunca)
+fwrite:$(clinkfuncbb)$(clinkfuncurl)fwrite$(clinkfuncba):$(clinkfunca)
+
+# File positioning:
+
+fgetpos:$(clinkfuncbb)$(clinkfuncurl)fgetpos$(clinkfuncba):$(clinkfunca)
+fseek:$(clinkfuncbb)$(clinkfuncurl)fseek$(clinkfuncba):$(clinkfunca)
+fsetpos:$(clinkfuncbb)$(clinkfuncurl)fsetpos$(clinkfuncba):$(clinkfunca)
+ftell:$(clinkfuncbb)$(clinkfuncurl)ftell$(clinkfuncba):$(clinkfunca)
+rewind:$(clinkfuncbb)$(clinkfuncurl)rewind$(clinkfuncba):$(clinkfunca)
+
+# Error-handling:
+
+clearerr:$(clinkfuncbb)$(clinkfuncurl)clearerr$(clinkfuncba):$(clinkfunca)
+feof:$(clinkfuncbb)$(clinkfuncurl)feof$(clinkfuncba):$(clinkfunca)
+ferror:$(clinkfuncbb)$(clinkfuncurl)ferror$(clinkfuncba):$(clinkfunca)
+perror:$(clinkfuncbb)$(clinkfuncurl)perror$(clinkfuncba):$(clinkfunca)
+
+# Macros:
+
+EOF:$(clinkfuncbb)$(clinkfuncurl)EOF$(clinkfuncba):$(clinkfunca)
+FILENAME_MAX:$(clinkfuncbb)$(clinkfuncurl)FILENAME_MAX$(clinkfuncba):$(clinkfunca)
+NULL:$(clinkfuncbb)$(clinkfuncurl)NULL$(clinkfuncba):$(clinkfunca)
+TMP_MAX:$(clinkfuncbb)$(clinkfuncurl)TMP_MAX$(clinkfuncba):$(clinkfunca)
+# And also _IOFBF, _IOLBF, _IONBF, BUFSIZ, FOPEN_MAX, L_tmpnam, SEEK_CUR, SEEK_END and SEEK_SET, each described with its corresponding function.
+
+# Types:
+
+FILE:$(clinkfuncbb)$(clinkfuncurl)FILE$(clinkfuncba):$(clinkfunca)
+fpos_t:$(clinkfuncbb)$(clinkfuncurl)fpos_t$(clinkfuncba):$(clinkfunca)
+size_t:$(clinkfuncbb)$(clinkfuncurl)size_t$(clinkfuncba):$(clinkfunca)
+
+####
+# string.h
+####
+
+# Copying:
+
+memcpy:$(clinkfuncbb)$(clinkfuncurl)memcpy$(clinkfuncba):$(clinkfunca)
+memmove:$(clinkfuncbb)$(clinkfuncurl)memmove$(clinkfuncba):$(clinkfunca)
+strcpy:$(clinkfuncbb)$(clinkfuncurl)strcpy$(clinkfuncba):$(clinkfunca)
+strncpy:$(clinkfuncbb)$(clinkfuncurl)strncpy$(clinkfuncba):$(clinkfunca)
+
+# Concatenation:
+
+strcat:$(clinkfuncbb)$(clinkfuncurl)strcat$(clinkfuncba):$(clinkfunca)
+strncat:$(clinkfuncbb)$(clinkfuncurl)strncat$(clinkfuncba):$(clinkfunca)
+
+# Comparison:
+
+memcmp:$(clinkfuncbb)$(clinkfuncurl)memcmp$(clinkfuncba):$(clinkfunca)
+strcmp:$(clinkfuncbb)$(clinkfuncurl)strcmp$(clinkfuncba):$(clinkfunca)
+strcoll:$(clinkfuncbb)$(clinkfuncurl)strcoll$(clinkfuncba):$(clinkfunca)
+strncmp:$(clinkfuncbb)$(clinkfuncurl)strncmp$(clinkfuncba):$(clinkfunca)
+strxfrm:$(clinkfuncbb)$(clinkfuncurl)strxfrm$(clinkfuncba):$(clinkfunca)
+
+# Searching:
+
+memchr:$(clinkfuncbb)$(clinkfuncurl)memchr$(clinkfuncba):$(clinkfunca)
+strchr:$(clinkfuncbb)$(clinkfuncurl)strchr$(clinkfuncba):$(clinkfunca)
+strcspn:$(clinkfuncbb)$(clinkfuncurl)strcspn$(clinkfuncba):$(clinkfunca)
+strpbrk:$(clinkfuncbb)$(clinkfuncurl)strpbrk$(clinkfuncba):$(clinkfunca)
+strrchr:$(clinkfuncbb)$(clinkfuncurl)strrchr$(clinkfuncba):$(clinkfunca)
+strspn:$(clinkfuncbb)$(clinkfuncurl)strspn$(clinkfuncba):$(clinkfunca)
+strstr:$(clinkfuncbb)$(clinkfuncurl)strstr$(clinkfuncba):$(clinkfunca)
+strtok:$(clinkfuncbb)$(clinkfuncurl)strtok$(clinkfuncba):$(clinkfunca)
+
+# Other:
+
+memset:$(clinkfuncbb)$(clinkfuncurl)memset$(clinkfuncba):$(clinkfunca)
+strerror:$(clinkfuncbb)$(clinkfuncurl)strerror$(clinkfuncba):$(clinkfunca)
+strlen:$(clinkfuncbb)$(clinkfuncurl)strlen$(clinkfuncba):$(clinkfunca)
+
+# Macros:
+
+NULL:$(clinkfuncbb)$(clinkfuncurl)NULL$(clinkfuncba):$(clinkfunca)
+
+# Types:
+
+size_t:$(clinkfuncbb)$(clinkfuncurl)size_t$(clinkfuncba):$(clinkfunca)
+
+####
+# time.h
+####
+
+# Time manipulation:
+
+clock:$(clinkfuncbb)$(clinkfuncurl)clock$(clinkfuncba):$(clinkfunca)
+difftime:$(clinkfuncbb)$(clinkfuncurl)difftime$(clinkfuncba):$(clinkfunca)
+mktime:$(clinkfuncbb)$(clinkfuncurl)mktime$(clinkfuncba):$(clinkfunca)
+time:$(clinkfuncbb)$(clinkfuncurl)time$(clinkfuncba):$(clinkfunca)
+
+# Conversion:
+
+asctime:$(clinkfuncbb)$(clinkfuncurl)asctime$(clinkfuncba):$(clinkfunca)
+ctime:$(clinkfuncbb)$(clinkfuncurl)ctime$(clinkfuncba):$(clinkfunca)
+gmtime:$(clinkfuncbb)$(clinkfuncurl)gmtime$(clinkfuncba):$(clinkfunca)
+localtime:$(clinkfuncbb)$(clinkfuncurl)localtime$(clinkfuncba):$(clinkfunca)
+strftime:$(clinkfuncbb)$(clinkfuncurl)strftime$(clinkfuncba):$(clinkfunca)
+
+# Macros:
+
+CLOCKS_PER_SEC:$(clinkfuncbb)$(clinkfuncurl)CLOCKS_PER_SEC$(clinkfuncba):$(clinkfunca)
+NULL:$(clinkfuncbb)$(clinkfuncurl)NULL$(clinkfuncba):$(clinkfunca)
+
+# Types:
+
+clock_t:$(clinkfuncbb)$(clinkfuncurl)clock_t$(clinkfuncba):$(clinkfunca)
+size_t:$(clinkfuncbb)$(clinkfuncurl)size_t$(clinkfuncba):$(clinkfunca)
+time_t:$(clinkfuncbb)$(clinkfuncurl)time_t$(clinkfuncba):$(clinkfunca)
+struct:$(clinkfuncbb)$(clinkfuncurl)struct$(clinkfuncba):$(clinkfunca)

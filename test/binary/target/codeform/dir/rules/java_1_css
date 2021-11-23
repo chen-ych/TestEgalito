@@ -1,0 +1,60 @@
+# java_1_css by DWK
+# codeform rules for formatting Java into HTML 4.01 transitional with CSS,
+#     style 1
+#
+# codeform, a code formatter and colourer [intended] for C and C++
+# Copyright (C) 2007 DWK
+#
+# This is free software, and you are welcome to redistribute it
+# under certain conditions; see the file COPYING for details.
+
+keywordd=blue
+keyworddarkd=darkblue
+midwordd=darkred
+midwordlightd=red
+commentd=green
+commentdocd=darkgreen
+stringd=red
+numberd=blue
+fpnumberd=darkblue
+
+=start
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">\n\
+<html><head><title>codeform</title>\n\
+<style type\="text/css">\n\
+.keyword { color\: $(keywordd); }\n\
+.keyworddark { color\: $(keyworddarkd); }\n\
+.midword { color\: $(midwordd); }\n\
+.midwordlight { color\: $(midwordlightd); }\n\
+.comment { color\: $(commentd); }\n\
+.commentdoc { color\: $(commentdocd); }\n\
+.string { color\: $(stringd); }\n\
+.number { color\: $(numberd); }\n\
+.fpnumber { color\: $(fpnumberd); }\n\
+</style></head><body><pre>\n
+
+=end
+</pre></body></html>\n
+
+keywordc=keyword
+keyworddarkc=keyworddark
+midwordc=midword
+midwordlightc=midwordlight
+commentc=comment
+commentdocc=commentdoc
+stringc=string
+numberc=number
+fpnumberc=fpnumber
+
+formbb=<span class="
+formba=">
+forma=</span>
+
+boldb=<b>
+bolda=</b>
+
+italicb=<i>
+italica=</i>
+
+._html
+.java_1

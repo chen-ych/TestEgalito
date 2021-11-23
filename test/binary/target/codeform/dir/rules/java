@@ -1,0 +1,109 @@
+# java by DWK
+# codeform rules for formatting Java
+#
+# codeform, a code formatter and colourer [intended] for C and C++
+# Copyright (C) 2007 DWK
+#
+# This is free software, and you are welcome to redistribute it
+# under certain conditions; see the file COPYING for details.
+
+=keyword
+
+keywordb=
+keyworda=
+
+abstract:$(keywordb):$(keyworda)
+assert:*:*# added in Java 1.4
+boolean:*:*
+break:*:*
+byte:*:*
+case:*:*
+catch:*:*
+char:*:*
+class:*:*
+const:*:*# not used
+continue:*:*
+default:*:*
+do:*:*
+double:*:*
+else:*:*
+enum:*:*# added in Java 5.0 [or 1.5]
+extends:*:*
+final:*:*
+finally:*:*
+float:*:*
+for:*:*
+future:*:*
+generic:*:*
+goto:*:*# not used
+if:*:*
+implements:*:*
+import:*:*
+inner:*:*
+instanceof:*:*
+int:*:*
+interface:*:*
+long:*:*
+native:*:*
+new:*:*
+null:*:*
+operator:*:*
+outer:*:*
+package:*:*
+private:*:*
+protected:*:*
+public:*:*
+rest:*:*
+return:*:*
+short:*:*
+static:*:*
+strictfp:*:*# added in Java 1.2
+super:*:*
+switch:*:*
+synchronized:*:*
+this:*:*
+throw:*:*
+throws:*:*
+transient:*:*
+try:*:*
+var:*:*
+void:*:*
+volatile:*:*
+while:*:*
+
+=comment
+
+commentb=
+commenta=
+commentdocb=$(commentb)
+commentdoca=$(commenta)
+
+//:$(commentb):$(commenta)
+///:$(commentdocb):$(commentdoca)
+
+/**/::$(commentb):$(commenta)
+/*:*/:$(commentb):$(commenta)
+/**:*/:$(commentdocb):$(commentdoca)
+/*!:*/:*:*
+
+=string
+
+stringb=
+stringa=
+
+":$(stringb):$(stringa)
+':*:*
+
+=number
+
+numberb=
+numbera=
+
+$(numberb):$(numbera)
+
+=fpnumber
+
+fpnumberb=
+fpnumbera=
+
+$(fpnumberb):$(fpnumbera)

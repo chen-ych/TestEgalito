@@ -1,0 +1,65 @@
+History of codeform:
+
+---- versions 1.2.x:
+
+1.2.0 [ongoing]:
+    Complete re-write of codeform. Features include:
+        - Much faster than codeform 1.10 (about five times faster)
+        - Binary search for rules making it much faster for many rules
+        - Sequential keywords of the same colour have one tag
+        - Unlimited line length for rules and input files
+        - Support for multiple input, output, and rules files
+        - Inline rules which can be specified on the command line
+        - Greatly improved data files which support variables and part sharing
+        - Automatic termination of strings that don't terminate
+        - Support for comments inside comments (ie, /**/ inside #)
+        - Much more generic and easier to extend (few hard-coded assumptions)
+        - Comments in the code so it's pretty much readable
+        - No memory leaks (according to Valgrind with rules/c_1_css)
+
+---- versions 1.00 - 1.10:
+
+1.11 [codeform.c]:
+    Version 1.2.0 was started instead.
+
+1.10 [codeform_208.c]:
+    Removed [newline] header, added [backslash]. Changed
+    data_syntax_error(). Fixed search-and-replace.
+
+1.09 [codeform_192.c]:
+    Eliminated [surround] in dat file; made it more flexible.
+
+1.08 [codeform_181.c]:
+    Reduced memory consumption in read_data() (by ~3000B).
+    Added allocate_defaults(), so that a blank file can be
+    used for a dat file.
+
+1.07 [codeform_143.c]:
+    Incorporated dynamic memory allocation into the dat file
+    reading code (read_data() and others).
+
+1.06 [codeform_121.c]:
+    Changed data definitions to make the code much faster
+    (10 vars -> 1 array (idata)).
+
+1.04 [codeform_81.c] - 1.05 [codeform_100.c]:
+    Improved the memory consumption immensely: converted
+    hard-coded data into dat file (executable shrank
+    from 23KB to 14KB).
+
+1.03 [codeform_59.c]:
+    Fixed chomp() to work under *NIX. A bit of modularization.
+    Very minor. Posted code on cboard.cprogramming.com.
+
+1.02 [codeform_56.c]:
+    Added search - and - replacing, and mlstrings. Fixed some
+    bugs. Removed SQUOTE mode (made into string). Lots of
+    modularization.
+
+1.01 [codeform_26.c]:
+    Not much at all. Modularization and --version.
+
+1.00 [codeform_24.c]:
+    Started codeform. Included keywords, s/mlcomments, one
+    string type ("hippo"), squotes (different mode), numbers,
+    and newlines.

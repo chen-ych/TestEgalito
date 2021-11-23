@@ -1,0 +1,39 @@
+# cpp by DWK
+# codeform rules for formatting C++
+#
+# codeform, a code formatter and colourer [intended] for C and C++
+# Copyright (C) 2007 DWK
+#
+# This is free software, and you are welcome to redistribute it
+# under certain conditions; see the file COPYING for details.
+
+# This file can be specified after any C rules file.
+
+.c
+
+=keyword
+catch:$(keywordb):$(keyworda)
+class:*:*
+const_cast:*:*
+delete:*:*
+dynamic_cast:*:*
+explicit:*:*
+export:*:*
+friend:*:*
+mutable:*:*
+namespace:*:*
+new:*:*
+operator:*:*
+private:*:*
+protected:*:*
+public:*:*
+reinterpret_cast:*:*
+static_cast:*:*
+template:*:*
+this:*:*
+throw:*:*
+try:*:*
+typeid:*:*
+typename:*:*
+using:*:*
+virtual:*:*

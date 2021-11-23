@@ -1,0 +1,59 @@
+# java_1 by DWK
+# codeform rules for formatting Java, style 1
+#
+# codeform, a code formatter and colourer [intended] for C and C++
+# Copyright (C) 2007 DWK
+#
+# This is free software, and you are welcome to redistribute it
+# under certain conditions; see the file COPYING for details.
+
+keywordc=blue
+keywordb=$(formbb)$(keywordc)$(formba)
+keyworda=$(forma)
+
+=keyword
+
+keyworddarkc=darkblue
+keyworddarkb=$(formbb)$(keyworddarkc)$(formba)
+keyworddarka=$(forma)
+
+Boolean:$(keyworddarkb):$(keyworddarka)
+Integer:*:*
+Double:*:*
+
+=midword
+
+midwordc=darkred
+midwordb=$(formbb)$(midwordc)$(formba)
+midworda=$(forma)
+
+[:$(midwordb):$(midworda)
+]:*:*
+(:*:*
+):*:*
+{:*:*
+}:*:*
+lt=<
+gt=>
+$(lt):*:*
+$(gt):*:*
+
+midwordlightc=red
+midwordlightb=$(formbb)$(midwordlightc)$(formba)
+midwordlighta=$(forma)
+
+\*:$(midwordlightb):$(midwordlighta)
+amp=&
+&:$(midwordlightb):$(amp):$(midwordlighta)
+
+commentc=green
+commentdocc=darkgreen
+
+stringc=red
+
+numberc=blue
+
+fpnumberc=darkblue
+
+.c_1ext
+.java

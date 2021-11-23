@@ -1,0 +1,22 @@
+/*-------------------------------------------*\
+ | TODO list for future versions of codeform |
+\*-------------------------------------------*/
+
+Short-term
+- ? Optimise rule searching by looking in the previous position first
+- Add support for "\n" and "\param" in specific comments ("" and /*! */)
+- Make a "function" rule: \w+\s+\(
+- ? Don't print closing tags for same-coloured nested comments
+- Provide a default rules directory that is searched first
+- Make "escaped newline" (\) character specifiable
+- Don't count #es in #defines as new comments;
+    don't allow nestcoms to include themselves
+[done] - Allow multiple prev pointers!
+[done] - free static variables in add_rule()
+
+Long-term
+- Make input, output and styles rules files separate
+
+Distant long-term
+- Support indent-style code beautifying
+- Support regular expressions

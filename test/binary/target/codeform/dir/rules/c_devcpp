@@ -1,0 +1,13 @@
+# c_devcpp by DWK
+# codeform rules for formatting C, devcpp style
+#
+# codeform, a code formatter and colourer [intended] for C and C++
+# Copyright (C) 2007 DWK
+#
+# This is free software, and you are welcome to redistribute it
+# under certain conditions; see the file COPYING for details.
+
+.c_devcppext
+
+.c_1ext
+.c
